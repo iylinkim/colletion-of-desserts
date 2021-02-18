@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.js-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dessert {
+  width: 100px;
+  height: 100px;
+}
+
+.dessert img {
+  width: 100%;
+  height: 100%;
+}
+.randomList {
+  width: 500px;
+  height: 100px;
+  /* overflow: hidden; */
+  outline: 5px solid gold;
+  margin-left: 200px;
+
+}
+.js-random {
+  width: 600%;
+  display: flex;
+}
+
+.js-random li {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  outline: 1px solid red;
+}
+
+.js-random li img {
+  width: 100%;
+}

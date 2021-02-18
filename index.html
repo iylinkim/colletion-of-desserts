@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+  </head>
+  <body>
+    <h1>Search any dessert!</h1>
+    <div class="randomList">
+      <p class="js-btns">
+        <button class="js-btn prev" name="prev">&lt;</button>
+        <button class="js-btn next" name="next">&gt;</button>
+      </p>
+      <ul class="js-random">
+        <li class="random_slide">1</li>
+        <li class="random_slide">2</li>
+        <li class="random_slide">3</li>
+        <li class="random_slide">4</li>
+        <li class="random_slide">5</li>
+        <li class="random_slide">6</li>
+        <li class="random_slide">7</li>
+        <li class="random_slide">8</li>
+        <li class="random_slide">9</li>
+        <li class="random_slide">10</li>
+      </ul>
+    </div>
+    <form class="searchForm">
+      <input class="searchInput" type="text" placeholder="search" />
+      <input class="searchBtn" type="submit" value="search" />
+    </form>
+    <ul class='js-keywords'></ul>
+    <ul class="js-list"></ul>
+    <script type="module" src="./search.js"></script>
+    <script type="module" src="./slide.js"></script>
+  </body>
 </html>
