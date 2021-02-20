@@ -11,11 +11,11 @@
     <h1>Search any dessert!</h1>
     <div class="randomList">
       <p class="js-btns">
-        <button class="js-btn prev" name="prev">&lt;</button>
+        <button class="js-btn prev none" name="prev">&lt;</button>
         <button class="js-btn next" name="next">&gt;</button>
       </p>
       <ul class="js-random">
-        <li class="random_slide">1</li>
+        <!-- <li class="random_slide">1</li>
         <li class="random_slide">2</li>
         <li class="random_slide">3</li>
         <li class="random_slide">4</li>
@@ -24,15 +24,17 @@
         <li class="random_slide">7</li>
         <li class="random_slide">8</li>
         <li class="random_slide">9</li>
-        <li class="random_slide">10</li>
+        <li class="random_slide">10</li> -->
       </ul>
     </div>
     <form class="searchForm">
-      <input class="searchInput" type="text" placeholder="search" />
+      <input autofocus class="searchInput" type="text" placeholder="search" />
       <input class="searchBtn" type="submit" value="search" />
     </form>
+    <button class='js-getRandom'>Get random desserts</button>
     <ul class='js-keywords'></ul>
     <ul class="js-list"></ul>
+    <h2></h2>
     <script type="module" src="./search.js"></script>
     <script type="module" src="./slide.js"></script>
   </body>

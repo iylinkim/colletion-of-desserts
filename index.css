@@ -21,23 +21,59 @@ li {
 .randomList {
   width: 500px;
   height: 100px;
-  /* overflow: hidden; */
+  overflow: hidden;
   outline: 5px solid gold;
   margin-left: 200px;
-
+  position: relative;
 }
 .js-random {
   width: 600%;
   display: flex;
+  transition: margin-left 0.5s ease;
 }
 
 .js-random li {
   width: 100px;
   height: 100px;
-  background-color: pink;
-  outline: 1px solid red;
+  display: flex;
+  background-color:pink;
 }
 
 .js-random li img {
   width: 100%;
+  /* height:100%; */
 }
+
+/* btn */
+.js-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  color: red;
+}
+
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+
+.js-btn.prev {
+  left: 0;
+}
+.js-btn.next {
+  right: 0;
+}
+
+/* form */
+/* .searchInput:fo{
+
+} */

@@ -1,5 +1,6 @@
 import Dessert from "./dessert.js";
-
+const h2 = document.querySelector("h2");
+const get_btn = document.querySelector(".js-getRandom");
 const searchInput = document.querySelector(".searchInput");
 const searchBtn = document.querySelector(".searchBtn");
 const searchForm = document.querySelector(".searchForm");
@@ -21,12 +22,12 @@ function loadPictures(obj) {
       const li = document.createElement("li");
       li.className = QUERY;
       const img = document.createElement("img");
-      img.src = pic.urls.small;
+      img.dataSrc = pic.urls.small;
       li.append(img);
       list.append(li);
     });
-  }else{
-      getPictures();
+  } else {
+    getPictures();
   }
 }
 
@@ -40,7 +41,7 @@ async function onSubmit(event) {
     localStorage.setItem(PICTURES, JSON.stringify(data.results));
     loadPictures(data.results);
   });
-  handleList();
+  //   handleList();
 
   console.log(keywordsList.length);
   if (keywordsList.length >= 5) {
@@ -50,7 +51,7 @@ async function onSubmit(event) {
     paintKeywords(searchInput.value);
     saveKeywords();
   }
-  searchInput.value = "";
+  //   searchInput.value = "";
 }
 
 async function getPictures() {
@@ -59,7 +60,7 @@ async function getPictures() {
     pics = result;
   });
   savePictures(pics);
-  //   loadPictures(pics);
+  // loadPictures(pics);
 }
 
 function handleList() {
@@ -112,14 +113,31 @@ function loadKeywords() {
   }
 }
 
+async function handleScroll(event) {
+  const scrollHeight = document.documentElement.scrollHeight;
+  const scrollTop = document.documentElement.scrollTop;
+  const clientHeight = document.documentElement.clientHeight;
+
+  if (scrollHeight === scrollTop + clientHeight) {
+    h2.innerText = "scroll Bottom!";
+    // await pictures.search(searchInput.value).then((data) => {
+    // //   localStorage.setItem(PICTURES, JSON.stringify(data.results));
+    // //   loadPictures(data.results);
+    // console.log([...data.results, ...data.results]);
+    // });
+  }
+}
+
 function init() {
   searchForm.addEventListener("submit", onSubmit);
 
-  if(!ls_pictures){
-      getPictures(ls_pictures);
+  if (!ls_pictures) {
+    getPictures(ls_pictures);
   }
   loadPictures(ls_pictures);
   loadKeywords();
-  //   loadSlides();
+  loadSlides();
+  window.addEventListener("scroll", handleScroll);
+  get_btn.addEventListener("click", loadSlides)
 }
 init();
